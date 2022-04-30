@@ -8,6 +8,7 @@ function R = Algebraic(nume, d)
 
     [ADJ, DEG, ~] = read_graph(nume);
     n = length(DEG);
+
     dM = d .* (PR_Inv(diag(DEG)) * ADJ)';
     vect = ((1 - d) / n) .* ones(n, 1);
 

@@ -7,7 +7,7 @@ function y = Apartenenta(x, val1, val2)
     elseif x > val2
         y = 1;
     else
-        a = 1 / (val2 - val2);
+        a = 1 / (val2 - val1);
         b = -val1 / (val2 - val1);
         y = a * x + b;
     end

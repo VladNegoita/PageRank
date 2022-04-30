@@ -16,7 +16,7 @@ function R = Iterative(nume, d, eps)
     
     cnt = 0;
     while cnt < 100
-        % R(t + 1) = d * M * R(t) + ((1 - d) / n)
+        % R(t + 1) = d * M * R(t) + ((1 - d) / n) * 1
         newR = dM * R + vect;
         if norm(newR - R) < eps
             break;

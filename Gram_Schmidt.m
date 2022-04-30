@@ -1,7 +1,11 @@
 function [Q, R] = Gram_Schmidt(A)
     % this function returns a QR factorization of the given matrix
     % the algorithm implemented is an optimized version of Gram_Schmidt
-    % Q = the orthogonal matrix; R = upper triangular matrix
+    % input:
+    %   -> A: the matrix to be factorised
+    % output:
+    %   -> Q: the orthogonal matrix
+    %   -> R = upper triangular matrix
     
     [n, ~] = size(A);
     Q = zeros(n, n);

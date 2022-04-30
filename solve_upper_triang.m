@@ -1,6 +1,10 @@
 function sol = solve_upper_triang(R, b)
-	% this function solves the system R * x = b where:
-    % R = upper triangular matrix and b is a column vector
+	% this function solves the upper traingular system R * x = b
+    % input:
+    %   -> R: upper triangular matrix
+    %   -> b: column vector
+    % output:
+    %   -> sol: the solution the given system
 
     [n, ~] = size(R);
     sol = zeros(n, 1);

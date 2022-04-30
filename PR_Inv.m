@@ -1,5 +1,9 @@
 function B = PR_Inv(A)
-	% this function calculates the inverse of A using Gram-Schmidt
+	% this function calculates the inverse using optimised Gram-Schmidt
+    % input:
+    %   -> A: the matrix which must be inversed
+    % output:
+    %   -> B: the inverse
 
     [n, ~] = size(A);
     [Q, R] = Gram_Schmidt(A);
