@@ -12,6 +12,6 @@ function R = Algebraic(nume, d)
     dM = d .* (PR_Inv(diag(DEG)) * ADJ)';
     vect = ((1 - d) / n) .* ones(n, 1);
 
-    R = PR_Inv(eye(n, n) - dM) * vect;
+    R = PR_Inv(eye(n) - dM) * vect;
 
 end

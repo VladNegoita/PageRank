@@ -36,11 +36,20 @@ Both methods have in common the same idea of calculating the PageRank:
 	   (I - d * M) * R = ((1 - d) / n) * 1v
 
 where:
+
 	R = the PageRank vector
 	d = damping factor
 	n = the number of pages
 	1v = the column vector that has only ones as entries
-	M = (K^-1 * A) transposed where A = adjacency matrix,  K = out degrees matrix
+	M = stochastic matrix -> M(i, j) = {
+						1 / exterior_degree(j)
+							if j links to i
+						0
+							otherwise
+					   }
+	and it is calculated this way: M = (K^-1 * A) transposed where: 
+						A = adjacency matrix
+						K = out degrees matrix
 
 Observations:
 
@@ -50,3 +59,30 @@ Observations:
 	   iterative one when considering R(t + 1) = R(t) (or t approaches inf)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3. Testing
+
+The program was tested using the provided data.
+In addition, each function was manually tested with various exemples, such as:
+
+	-> PR_Inv was tested with diagonal, upper-triangular, orthogonal,
+				  symetric, random matrices
+
+	-> Gram_Schmidt was tested with diagonal, upper-triangular, orthogonal,
+					symetric, random matrices
+
+	-> solve_upper_triang was tested with a random upper-triangular matrix
+
+	-> read_graph was tested with a variety of graphs -> with and without
+							     self-loops
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4. Bibliography
+
+	1. https://en.wikipedia.org/wiki/PageRank
+	2. Lab_3_MN -> Optimised Gram-Schmidt
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Copyright 2022 Vlad Negoita <vlad1negoita@gmail.com>
